@@ -1,0 +1,231 @@
+""" 
+    operations : 
+        1. assignment
+        2. math -- +, -, /, %, *, **
+        3. comp -- >, <, ==, !=, >=, <= 
+        4. logical - and or not
+            and : 2 inputs -- false --> result -false
+            
+            input1  input2  output
+            true    true    true
+            true    false   false
+            false   true    false
+            false   false   false
+            
+            or : 2 inputs -- true --> result : true
+            
+            input1  input2 output
+            true    true    true
+            true    false   true
+            false   true    true
+            false   false   false
+            
+            not : 1 input   --- Result : opp
+            
+            input   output
+            true    false
+            false   true
+        5. bitwise     
+            & | ~ ^ << >>
+            
+               
+"""
+""" 
+indendation : 
+
+control statements
+    1. condition statements: 
+        setting a rule for a set of statements or a statement to get executed.
+        if/ simple if : 
+            considers a condition and if the condition is true then executes the statement or else it will skip the statement inside the if block.
+            
+            syntax : 
+                if condition:
+                    block of statements
+        if else
+            syntax : 
+                if condition :
+                    block of if 
+                else:
+                    block of else
+        if elif
+            syntax : 
+                if condition : 
+                    block of if
+                elif condition1:
+                    block of elif1
+                .
+                .
+                .
+                else:
+                    block of else
+        match
+            syntax : 
+                match(input):
+                    case value:
+                        block of case
+                    .
+                    .
+                    .
+        nested conditional statements
+    2. iterative statements : 
+        for
+            syntax : 
+                for variable in range():
+                    block
+        while
+            syntax : 
+                variable = starting
+                
+                while(condition):
+                    block of code
+                    variable update
+"""
+""" 
+    Grade assignment : 
+        - 90 -- O Grade
+        - 70 - 90 -- A Grade
+        - 50 - 70 -- B Grade
+        - 30 - 50 -- C Grade
+        - 30 - Fail
+"""
+""" 
+    take 3 values and find the largest number b/w 3 values.
+    3,5,4
+    
+    - 5 
+    
+    taken : 3  taken > 5 and taken > 4 -- 3
+    taken : 5  taken > 3 and taken > 4 -- 5
+    taken : 3  taken > 5 and taken > 4 -- 4
+    
+    a = 4
+    b = 3
+    c = 5
+    
+    if(a > b and a > c):
+        print(a, "is bigger than",b,c)
+    elif(b > a and b > c):
+        print(b, "is bigger than",a,c)
+    else:
+        print(c, "is bigger than",b,a)
+        
+    find wheather the given number is a positive or negative number.
+    
+    < 0 -- negative
+    >= 0 -- positive
+    
+    value = int(input("Enter a value : "))
+    
+    if(value < 0):
+        print("Negative number")
+    else:
+        print("Positive number")
+    
+    find wheather the given number is a even or odd number
+    number%2 == 0
+"""
+""" 
+    break
+    pass
+    continue
+"""
+""" 
+    function : Reusable block of code.
+    
+    syntax : 
+        def functionName(parameters(optional)):
+            block of code
+"""
+
+""" 
+1. write a program to check if a given number is prime number or not
+2. write a function to reuse prime number logic 
+3. convert all the assignments to functions.
+"""
+""" 
+    list : collection of data - []
+        - we use index values to access the data individully
+            -   start -- 0
+            -   end   -- (list-length - 1) //total no.of values stored inside the list.
+        - duplicates, changable, ordered
+"""
+""" 
+    tuple : collects the data --> ()
+        - allows duplicate, ordered, not change values
+        - can access data using index values
+        - can only access the data.
+"""
+""" 
+    set : collects the data --> {}
+        -- will not allow duplicates, unordered
+        -- can't use index values to access data
+        -- we can add data, remove
+"""
+""" 
+    dict : 
+        -- will store data in key pair values -- {}
+        -- ordered, allows duplicate data but not duplicate key
+        -- It will not have index value to access the data.
+        
+"""
+""" 
+    strings : collection of characters
+"""
+""" 
+    in
+        -- checks if given character is available inside the collection or not
+    is
+        --compares if the given character is equal to other character
+"""
+""" 
+    project : 
+        data1 
+        data2
+        data3
+        .
+        .
+        .
+        data10
+        
+        data11
+    OOP in python : 
+        1. Class : 
+            blue print of an object.
+            
+            syntax : 
+                class classname:
+                    //properties
+        2. Object : 
+            instance of a class. This helps us to store data related to class.
+            
+            syntax : 
+                objName = classname()
+            
+        Constructor : 
+            To assign the default values or else to assign the init values.
+
+            classname() -- constructor -- helps to build the object.
+            
+            default : 
+                we need not have to mention the constructor specifically.
+            
+            custom/ userdefined constructor : 
+                there is a built in function which we can use to customize the constructor.
+
+                syntax : 
+                    def __init__(self):
+                        //code
+-----------------------------------------------
+if you want to access data inside a class by using object.
+    syntax : 
+        objName.variableName
+
+    to assign : 
+        objName.variableName = "data"
+-----------------------------------------------
+        3. Encapsulation
+        4. inheritance
+        5. abstraction
+
+"""
