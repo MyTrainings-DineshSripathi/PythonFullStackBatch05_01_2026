@@ -216,6 +216,13 @@ control statements
                 syntax : 
                     def __init__(self):
                         //code
+        
+            Methods : 
+                are block of reusable code that is related to the class.
+                syntax : 
+                    class className:
+                        def methodName(self):
+                            //block of code
 -----------------------------------------------
 if you want to access data inside a class by using object.
     syntax : 
@@ -225,7 +232,79 @@ if you want to access data inside a class by using object.
         objName.variableName = "data"
 -----------------------------------------------
         3. Encapsulation
+            binding class variables/ data with in the class. So that the outside classes can't be able to access them directly.
+            => To make the variables restricted to a class we have to use access specifiers.
+                1. private   : make data accessable only within the class.
+                    syntax : 
+                        __variableName 
+                2. protected : make data accessable only to the related classes.
+                    syntax : 
+                        _variableName
+            => In order to access the protected variables we have to use methods.
+------------------------------------------------------------------------
         4. inheritance
+            aquiring parent class properties by a child class.
+
+            ex : 
+                class A : 
+                    properties
+                
+                class B:
+                    properties
+
+            --> to inherit one class props the child class must use the below syntax : 
+                syntax : 
+                    class B(parentClassName,...):
+                        B class props
+
+            --> Types of inheritance :  
+                1. single level inheritance
+                    class A 
+                        |
+                        |
+                    class B
+                2. multi level inheritance
+                    class A 
+                        |
+                        |
+                    class B 
+                        |
+                        |
+                    class C
+                3. hierachy inheritance
+                      class A 
+                        |
+                    ------------
+                    |           |
+                    class B  class C
+
+                4. multiple inheritance
+                    class A     class B 
+                        |           |
+                        -------------
+                                |
+                            class C
+                5. hybrid inheritance
+            
+------------------------------------------------------------------------
         5. abstraction
+            -- This is like a blue print to a class
+            -- we will define a method but not it's implementation
+            steps : 
+                1. import ABC (abstact base class) from abc package
+                2. create a abstract class and inherit the ABC to the abstract class
+                3. create a abstract method inside the abstract class using decorator @abstractmethod
+                4. create a sub class and inherit the abstract class and implement the abstract method
+                5. create an object for the sub class and use it.
+                
+
+            
+            ex : 
+                payments
+                    online
+                    card
+                    cash
+                
+            
 
 """
