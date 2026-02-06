@@ -308,3 +308,23 @@ if you want to access data inside a class by using object.
             
 
 """
+
+Exception Handling : 
+    To execute a program regardless of any error.
+
+    Exception : 
+        Error that comes when we are running the program.
+
+        Errors --- 1. Syntax Error  : At the time of writing the code.
+                |
+                ---2. Runtime Error : At the time of running the code.
+
+        syntax : 
+            try:
+                //code which will raise exception 
+            expect ObjectName:
+                //error handling code
+    
+    -> To raise exception in try block we use keyword 'raise'
+        syntax : 
+            raise Errorname("Message")
