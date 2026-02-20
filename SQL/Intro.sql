@@ -109,9 +109,69 @@ ALTER TABLE users ADD COLUMN user_city int;
 
 -- Remove user_city column from the table users
 -- write your query here
+ALTER TABLE users DROP COLUMN user_city;
 
 -- To rename a col name we use ALTER with RENAME COLUMN
 -- syntax : 
 	-- ALTER TABLE tableName RENAME COLUMN oldCOlName TO newColName;
 ALTER TABLE users RENAME COLUMN usercity TO user_city;
 
+-- Inorder delete the table or database we use the drop query
+-- syntax to delete table ; 
+	-- DROP TABLE tableName;
+-- Syntax to delete database;
+	-- DROP DATABASE databaseName;
+
+-- To insert data into the table we have to use DML command INSERT.
+-- syntax to insert data into the table
+	-- INSERT INTO tableName VALUES(value,....);
+    
+INSERT INTO users VALUES (2, "Adam", "adam@email.com", "8887987634");
+
+-- If we want to insert multi values at a time all we have to do is to divide the values as a seperate set. 
+-- syntax : 
+	-- INSERT INTO tableName VALUES (value1,...), (value1),...;
+INSERT INTO users 
+VALUES
+(2, "Bob", "bob@gmail.com", "9987654321"), 
+(3, "Chris", "chris@gmail.com", "9984454321"), 
+(4, "Eddie", "eddie@gmail.com", "9669954321");
+
+-- If we want to insert a certain column values then we have to use the column name specifically and those values
+-- syntax : 
+	-- INSERT INTO tableName(colName1, colName2,...) VALUES(...);
+INSERT INTO users(user_id, user_name, user_email) VALUES (5, "Franky", "franky@email.com");
+
+-- INSERT INTO users VALUES (6, "Georg", "georg@email.com");
+
+-- Update a record --> UPDATE commond.
+-- If I want to update all the records 
+	-- syntax :
+		-- UPDATE tableName SET colName = value;
+UPDATE users SET user_city = '1';
+
+-- If we want to update a specific record
+
+-- build a condition in order to target a specific record. 
+-- To build a condition we need to use the comparsion operators.
+-- >, <, =, <>, >=, <=
+-- Clause : 
+	-- Helps us to guide for what to do. 
+    -- 1. Where : 
+		-- It helps us to build a condition. 
+			-- syntax : 
+				-- DML query WHERE condition;
+-- update the phonenumber for user who is having id 5 with value 8876738383
+UPDATE users SET user_phone = "8876738383" WHERE user_id = 5;
+
+-- To see the table data we use DQL -- SELECT command
+-- syntax : 
+	-- SELECT * FROM tableName;
+SELECT * FROM users;
+
+-- To see a specific record from the table we have to use condition for that 
+-- syntax : 
+	-- SELECT * FROM tableName WHERE cond;
+
+-- Find the user data who is have email of bob@gmail.com 
+    

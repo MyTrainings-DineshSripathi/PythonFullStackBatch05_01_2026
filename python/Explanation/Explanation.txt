@@ -328,3 +328,30 @@ Exception Handling :
     -> To raise exception in try block we use keyword 'raise'
         syntax : 
             raise Errorname("Message")
+    
+    finally block : 
+        it will execute regardless of there is an exception or not.
+
+
+File Handling : 
+    We handle files in python using this concept.
+        1. open function 
+            syntax : 
+                file = open('path', mode)
+                we perform changes
+                file.close()
+
+        2. with open approach
+            syntax : 
+                with open('path', mode) as name : 
+                    we perform operations
+
+        
+        File Modes : 
+            1. read : 'r' -- we can only read the file. (default)
+            2. write : 'w' -- we can write content inside the file.
+            3. readwrite : rw -- we can read and write the content in the file.
+
+
+Module : 
+    Dir/ folder which holds a certain category files inside. we use import statement to use the files in that dir inside another files which are inside another directory.

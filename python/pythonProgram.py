@@ -1,6 +1,6 @@
-userAge = 45
+# userAge = 45
 
-UserAge = 39
+# UserAge = 39
 
 """ 
     operations : 
@@ -605,3 +605,9 @@ control statements
         5. abstraction
 
 """
+
+from OOP import Car as c
+
+car1 = c.OnlinePayment()
+
+print(car1)
