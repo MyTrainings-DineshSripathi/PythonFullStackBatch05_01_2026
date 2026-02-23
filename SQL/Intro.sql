@@ -126,7 +126,18 @@ ALTER TABLE users RENAME COLUMN usercity TO user_city;
 -- syntax to insert data into the table
 	-- INSERT INTO tableName VALUES(value,....);
     
-INSERT INTO users VALUES (2, "Adam", "adam@email.com", "8887987634");
+-- Truncate : 
+	-- Truncate is used to delete the data from the data. 
+    -- syntax : 
+    -- TRUNCATE TABLE tablename;
+    TRUNCATE table users;
+-- DROP : 
+	-- Delete the entire table.
+    -- syntax : 
+		-- DROP TABLE tableName;
+	DROP TABLE users;
+    
+INSERT INTO users VALUES (1, "Adam", "adam@email.com", "8887987634");
 
 -- If we want to insert multi values at a time all we have to do is to divide the values as a seperate set. 
 -- syntax : 
@@ -174,4 +185,48 @@ SELECT * FROM users;
 	-- SELECT * FROM tableName WHERE cond;
 
 -- Find the user data who is have email of bob@gmail.com 
-    
+SELECT * FROM users WHERE user_email = 'bob@gmail.com';
+
+-- operators : 
+-- comparison operators
+-- arthe operators
+-- in, between
+-- logical operators -- and, or , not
+
+--  Find the users who are having id of 1,4,3
+SELECT * FROM users WHERE user_id = 1 OR user_id = 3 OR user_id = 4;
+
+
+-- DELETE : Is used to delete a record from the table. 
+-- Syntax : 
+	-- DELETE FROM tablename WHERE condition;
+
+use world;
+
+SHOW TABLES;
+
+
+-- DQL 
+-- SELECT 
+-- syntax : 
+-- SELECT colName,... FROM tableName WHERE condition;
+
+SELECT * FROM country;
+
+-- Find the countries which doesn't belongs to Europe, Asia, Africa
+SELECT name FROM country WHERE continent NOT IN ('Europe', 'Asia', 'Africa');
+
+-- Find the name of the countries which having population of 78000, 293000, 120000,22720000, 154000, 22244000, 22455500, 6000
+SELECT name FROM country WHERE population IN (78000, 293000, 120000,22720000, 154000, 22244000, 22455500, 6000);
+
+-- Find the name of the contries which are in asia and got the independence in year between 1930 to 1965
+SELECT name, indepYear  from country WHERE continent = 'Asia' AND indepYear >= 1930 AND indepYear <= 1965;
+
+SELECT name from country WHERE continent = 'Asia' AND indepYear BETWEEN 1930 AND 1965;
+
+-- Find the Name of the contries which is in ASIA
+
+SELECT name FROM country WHERE continent = 'Asia';
+
+-- Find the country name which is having population of greater than 78000. 
+SELECT Name, population FROM country WHERE population >= 78000;
