@@ -200,6 +200,9 @@ SELECT * FROM users WHERE user_id = 1 OR user_id = 3 OR user_id = 4;
 -- DELETE : Is used to delete a record from the table. 
 -- Syntax : 
 	-- DELETE FROM tablename WHERE condition;
+    
+
+
 
 use world;
 
@@ -212,6 +215,19 @@ SHOW TABLES;
 -- SELECT colName,... FROM tableName WHERE condition;
 
 SELECT * FROM country;
+
+-- Like : Used find the data based upon the pattern matching. 
+-- % -- match n no.of characters
+-- _ -- match 1 character
+
+-- Find the countries, which are starting there name with n (n%)
+SELECT name FROM country WHERE name LIKE 'n%';
+
+-- Find the countries which are having population starts with 1 and the third with 3 and ends with 5
+SELECT name,population FROM country WHERE population LIKE '1_3%';
+
+-- Find the countries, which are starting there name with n and ending with d 
+SELECT name FROM country WHERE name LIKE 'n%d';
 
 -- Find the countries which doesn't belongs to Europe, Asia, Africa
 SELECT name FROM country WHERE continent NOT IN ('Europe', 'Asia', 'Africa');
@@ -230,3 +246,44 @@ SELECT name FROM country WHERE continent = 'Asia';
 
 -- Find the country name which is having population of greater than 78000. 
 SELECT Name, population FROM country WHERE population >= 78000;
+
+
+-- ORDER BY : used to sort out the data in a table while displaying the records. 
+-- syntax : 
+	-- SELECT * FROM tableName ORDER BY colName; (ascending order 1,2,3,4...)
+    -- SELECT * FROM tableName ORDER BY colName DESC; (descening order)
+
+-- Display the country names based upon the population in ascending order    
+SELECT name, continent, population FROM country ORDER BY population;
+
+-- LIMIT : It limits the no.of records to be displayed. 
+-- syntax : 
+	-- SELECT * FROM tableName LIMIT no.of records OFFSET start (n + 1);
+
+SELECT * FROM country LIMIT 5 OFFSET 5;
+
+-- Find the country which is having highest population. 
+SELECT * FROM country ORDER BY population DESC LIMIT 1;
+
+-- Find the country which is having the second highest population.
+SELECT * FROM country ORDER BY population DESC LIMIT 1 OFFSET 1;
+
+-- Aggregate Functions : 
+-- Built in function which are used to perform certain operations.
+-- MIN -- min value in a column
+-- MAX -- max value in a column
+-- AVG -- avg value of a column
+-- SUM -- add all the values inside col and provide the result
+-- COUNT -- total values present in the column.
+-- syntax : 
+	-- SELECT aggFun(colName) FROM tableName;
+
+-- Find the entire population in this world. 
+SELECT SUM(population) FROM country;
+
+-- Find the total no of countries present in the country table. 
+SELECT COUNT(name) no_of_countries FROM country;
+SELECT COUNT(name) no_of_countries FROM country;
+
+
+
