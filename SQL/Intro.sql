@@ -285,5 +285,81 @@ SELECT SUM(population) FROM country;
 SELECT COUNT(name) no_of_countries FROM country;
 SELECT COUNT(name) no_of_countries FROM country;
 
+-- GROUP BY : which will group the data based on a category. It will make the duplicate values as a single value.
+-- syntax : 
+	-- SELECT AGG(colName), colName-Grp FROM tableName GROUP BY colName-Grp
+    
+-- in my table I am having 40 users -- How many female and male are there in the table. GENDER -- group the data. 
+
+-- Find the no.of countries that there in each continent.
+SELECT COUNT(name),continent FROM country GROUP BY continent;
+
+-- Find the no.of countries which are having same population
+SELECT population, COUNT(population) FROM country GROUP BY population;
+
+-- Find the sum of population  for each continent
+SELECT continent, SUM(population) as total_population FROM country GROUP BY continent;
+
+SELECT continent, SUM(population) as total_population FROM country GROUP BY continent ORDER BY total_population;
+
+-- Having  : When we want to use condition in group by we use having clause.
+
+-- Find the avg population of each continent which continent name is starting with A 
+SELECT continent, AVG(population) as avg_population FROM country GROUP BY continent HAVING continent LIKE 'A%';
 
 
+-- Find the count of countries which got indepence after year 1930.
+SELECT COUNT(name), IndepYear FROM country GROUP BY IndepYear HAVING IndepYear > 1930;
+
+SELECT * FROM country;
+
+
+use pfsjfs2025_12_03;
+
+CREATE TABLE movie2024(
+	movie_id INT PRIMARY KEY AUTO_INCREMENT,
+    movie_name VARCHAR(40) NOT NULL,
+    movie_status VARCHAR(30) DEFAULT "RELEASED"
+);
+
+INSERT INTO movie2025 (movie_name, movie_status)
+VALUES 
+('Dune: Part Two', 'RELEASED'),
+('Furiosa: A Mad Max Saga', 'RELEASED'),
+('Deadpool & Wolverine', 'UPCOMING'),
+('Gladiator II', 'RELEASED'),
+('Nosferatu', 'UPCOMING');
+
+CREATE TABLE movie2025(
+	movie_id INT PRIMARY KEY AUTO_INCREMENT,
+    movie_name VARCHAR(40) NOT NULL,
+    movie_status VARCHAR(30) DEFAULT "RELEASED"
+);
+
+INSERT INTO movie2024 (movie_name, movie_status)
+VALUES 
+('Avatar: Part Two', 'RELEASED'),
+('The Dooms Day', 'UPCOMING'),
+('Deadpool & Wolverine', 'RELEASED'),
+('Gladiator III', 'UPCOMING'),
+('Nosferatu', 'RELEASED');
+
+
+SELECT * FROM movie2024;
+SELECT * FROM movie2025;
+
+-- UNION, INTERSECTION, UNION ALL, DIFFERENCE
+-- UNION -- show only common data b/w two tables. 
+-- INTERSECTION -- shows only different data b/w two tables.
+
+-- SYNTAX : 
+-- SELECT colName FROM table1 UNION SELECT colName FROM table2;
+
+-- Find the common movie name in movie2024 and movie2025.
+-- SELECT movie_name FROM movie2024 
+-- INTERSECT
+-- SELECT movie_name FROM movie2025;
+
+SELECT movie_name FROM movie2024
+UNION ALL
+SELECT movie_name FROM movie2025;
