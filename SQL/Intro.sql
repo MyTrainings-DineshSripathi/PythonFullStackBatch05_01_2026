@@ -363,3 +363,89 @@ SELECT * FROM movie2025;
 SELECT movie_name FROM movie2024
 UNION ALL
 SELECT movie_name FROM movie2025;
+
+
+-- JOINS : 
+-- Used to combine two ore more tables together. 
+-- Rule : In order combine 2 tables we have to use a common column (foreign key) for another table. 
+-- 3 types of joins
+	-- 1. Inner Join
+		-- syntax : 
+			-- SELECT * FROM tableName1 JOIN  tableName2 ON tableName1 = tableName2
+	-- 2. Outer join
+		-- 1. left outer join
+			-- SELECT * FROM tableName1 LEFT JOIN tableName2 ON tableName1 = tableName2;
+        -- 2. right outer join
+			-- SELECT * FROM tableName1 RIGHT JOIN tableName2 ON tableName1 = tableName2;
+        -- 3. full outer join //we can't apply it mysql. We apply union for left outer and right outer join
+	-- 3. Self Join
+    
+
+SHOW TABLES;
+
+SELECT * FROM city;
+SELECT * FROM country;
+SELECT * FROM countryLanguage;
+
+-- JOIN city and country table
+SELECT c.ID, c.Name, c.District, cou.Name, cou.continent FROM city c RIGHT OUTER JOIN country cou ON c.CountryCode = cou.Code AND cou.continent LIKE 'A%';
+
+-- Sub query : 
+-- a query within a query is calle sub query. Here we will have inner query and the outer query. 
+-- inner query output will be provided as input for the outer query.
+
+-- syntax :
+-- SELECT * FROM tableName WHERE condition ops (innerQuery);
+
+
+-- Find the country which are having more population then the avg population. 
+-- 25434098.1172
+
+-- Find the countries which are having population greater than 25434098.1172
+SELECT name FROM country WHERE population > (SELECT AVG(population) FROM country);
+
+-- Find the city name which is having the highest population each country.
+SELECT name, MAX(population) FROM city GROUP BY CountryCode;
+
+SELECT * FROM city;
+
+SELECT COUNT(devTable.name), devTable.countrycode 
+FROM 
+(SELECT c1.name, c1.countrycode, c1.population FROM city c1 WHERE c1.population = (SELECT MAX(c2.population) FROM city c2 WHERE c1.countrycode = c2.countrycode)) devTable
+GROUP BY devTable.countryCode;
+
+-- returning multiple cities within the same country. 
+SELECT name, countrycode, population FROM city WHERE population IN (SELECT MAX(population) FROM city GROUP BY CountryCode);
+
+
+SELECT c1.name, c1.countrycode, c1.population FROM city c1 WHERE c1.population = (SELECT MAX(c2.population) FROM city c2 WHERE c1.countrycode = c2.countrycode);
+
+SELECT * FROM city;
+
+-- Find which city in india is having highest population. 
+SELECT name, district, population FROM city WHERE countryCode = 'IND' ORDER BY population DESC LIMIT 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
