@@ -427,6 +427,75 @@ SELECT name, district, population FROM city WHERE countryCode = 'IND' ORDER BY p
 
 
 
+-- VIEW : a virtual table which will create a data based on query instead of storing data we stores the query. 
+-- DQL -- End table --> stored as a new table but the data we stored is not physical. 
+-- CREATE A view : we have to use DDL command CREATE
+-- syntax:
+-- -------------------
+-- CREATE VIEW viewName AS Query. 
+-- DROP VIEW viewName
+
+
+SELECT code, name, contient, population, indepYear, lifeExpectancy FROM country;
+
+-- write a query to find the captial name for every country.
+SELECT count(country.capital), country.capital FROM country GROUP BY capital;
+
+SELECT 
+country.code,
+country.name as country_name,
+city.name as capital,
+country.population ,
+country.lifeExpectancy
+FROM 
+country 
+LEFT OUTER JOIN 
+city 
+ON 
+city.id = country.capital;
+
+-- Find the average life expectancy of country which there names are starting with 'A'.
+-- SELECT 
+-- AVG(country.lifeExpectancy), country.name
+-- FROM
+-- country 
+-- LEFT OUTER JOIN
+-- city
+-- ON
+-- country.name LIKE 'A%';
+
+SELECT 
+*
+FROM
+country_capitals as country_capitals1
+WHERE 
+country_capitals1.lifeExpectancy = (SELECT MAX(lifeExpectancy) FROM country_capitals as country_capitals2);
+
+
+CREATE VIEW country_capitals 
+AS 
+SELECT 
+	country.code,
+	country.name as country_name,
+	city.name as capital,
+	country.population ,
+	country.lifeExpectancy
+FROM 
+	country 
+LEFT OUTER JOIN 
+	city 
+ON 
+	city.id = country.capital;
+
+
+SHOW TABLES;
+
+SELECT * FROM city;
+SELECT * FROM country;
+
+
+
+
 
 
 

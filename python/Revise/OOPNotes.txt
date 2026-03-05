@@ -1,0 +1,45 @@
+Object Oriented Programming -- methodology.
+1. class -- blueprint of prgm. Defines the structure.
+2. object -- instance of a class. Creates space in our memory.
+3. inheritance -- accessing one class properties as another class properties.
+4. abstraction -- hiding the unneccesary info.
+5. Encapuslation -- making the data accessable only within the class.
+
+Rules : 
+1. We always write the code in classes
+2. we always use objects to store/ access the data.
+
+
+How to create a class?
+-- If there is a certain common data among a data we will generalize it and create a class
+-- Bike RTO
+    brand 
+    features 
+    fuel type 
+    lanch year
+    life 
+    registration no : 
+
+    syntax ; 
+        class className : 
+            properties
+
+How to create an object ?
+syntax : 
+    objectName = className()
+
+constructor : 
+-- is used to allocate memory to our object.
+syntax : 
+    def __init__(self):
+        //code here
+    
+syntax with param : 
+    def __init__(self, p1, p2, ..):
+        //code here
+
+Methods : 
+-- block of reusable code. 
+syntax : 
+    def methodName(self, para):
+        //method code here
