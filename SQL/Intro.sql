@@ -494,16 +494,59 @@ SELECT * FROM city;
 SELECT * FROM country;
 
 
+-- DCL  : Data Control Language
+-- To restrict the complete access to a user. 
+-- GRANT : to provide permission we use
+-- REVOKE : to remove the given permission 
+
+-- To create a user we have to use CREATE 
+-- syntax : 
+-- CREATE USER username IDENTIFY WITH password;
+CREATE USER dinesh IDENTIFIED BY "0000";
+
+-- GRANT PERMISSION TO THE USER
+-- syntax : 
+-- GRANT PERMISSION ON tableName TO username;
+GRANT SELECT ON world.city TO dinesh;
+
+-- ROVOKE permission to the user
+-- syntax : 
+-- REVOKE permission ON tableName FROM username;
+
+REVOKE SELECT ON world.city FROM dinesh;
 
 
+-- TCL : Transaction Control Language
+-- Bank --> A -- 500 -- 500 <-- B 
+
+use pfsjfs2025_12_03;
+
+SHOW TABLES;
+
+SELECT * FROM movie2024;
+
+UPDATE movie2024 SET movie_status = "UPCOMING" WHERE movie_id = 2;
+COMMIT;
+ROLLBACK;
+
+--  TCL : COMMIT, ROLLBACK, SAVEPOINT 
+
+BEGIN;
+
+INSERT INTO movie2024(movie_name, movie_status) VALUES ("RRR", "UPCOMING");
+
+SAVEPOINT rrrSavePoint;
+
+UPDATE  movie2024 SET movie_name = "Avengers End Game" WHERE movie_id = 2;
+
+SAVEPOINT updatem2;
+
+SELECT * FROM movie2024;
+
+ROLLBACK TO rrrSavePoint;
 
 
-
-
-
-
-
-
+COMMIT;
 
 
 

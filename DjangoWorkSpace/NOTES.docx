@@ -1,0 +1,35 @@
+-- Before downloading the django software. we have to create virtual environment.
+
+-- venv ensures that the entire system is not containing the django software so that if there is any mismatch of the django version b/w 2 different projects then they will not get effected.
+
+-- to create venv we have to follow the below steps 
+1. create a project director.
+2. Run "python -m venv venvName" -- creates venv in the director. 
+3. Activate the venv by running the command "venvName\Scripts\activate" 
+4. install django inside the venv.
+"pip install django"
+5. To see the installed django software run command -- "pip list"
+6. If you run command -- "django-admin --version"
+
+---------------------------------------
+
+TO CREATE DJANGO PROJECT FOLLOW THE BELOW STEPS : 
+
+1. Run command "django-admin startproject projectName"
+2. To run the application we have to go to app directory then run command 
+"python manage.py runserver"
+
+NOTE : 
+project -- application that we are working on.
+
+app -- a module that belongs to the application.
+
+manage.py -- helps to run our application
+
+folder with the projectName -- main folder.
+
+settings.py -- Here we configure the application. Encryp, Decrypt, database credentials
+
+urls.py -- Here we map the requests and responses. 
+
+-----------------------------------------

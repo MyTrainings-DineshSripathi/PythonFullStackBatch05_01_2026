@@ -1,0 +1,23 @@
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+try:
+    print(1/0)
+except(Exception) as e:
+    print(e)
+finally:
+    print("line no 5 crossed")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")
+print("line 1")

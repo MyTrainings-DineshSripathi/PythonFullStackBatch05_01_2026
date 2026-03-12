@@ -43,3 +43,27 @@ Methods :
 syntax : 
     def methodName(self, para):
         //method code here
+
+inheritance : 
+-- used to utilize one class properties as another class properties
+-- base class --> method1, method2, method3
+-- sub class --> method1, method3 
+
+-- sub class --> inherits --> base class 
+
+syntax : 
+    class childClassName(parentClassName,....):
+        //properties
+
+private(__) and protected(_) we can restrict the direct access of the class properties 
+
+
+exception handling 
+Error --> Stops
+
+try:
+    //places the error code
+expect(Exception as e):
+    //handles the error 
+finally:
+    //works even thought the program works or shows error
