@@ -33,3 +33,64 @@ settings.py -- Here we configure the application. Encryp, Decrypt, database cred
 urls.py -- Here we map the requests and responses. 
 
 -----------------------------------------
+
+1. To create a new app we have to use command 
+
+django-admin startapp appName
+
+2. Register the app 
+    -- go to settings -- installed apps -- add your app
+
+3. create a view to handle request and response. 
+    -- in our app we can find views.py
+    -- inside it write the request handler method and send response.
+
+4. create a url to view the created view. (app level url)
+    -- create a file named urls.py
+
+    urlpattern = [
+        path('endpoint', view_name),
+        .
+        .
+    ]
+
+    -- after creating the app level urls we have to provide the app level url to module level url 
+
+5. go to urls.py in our project folder. 
+    -- we have to provide the app level urls to the project level url 
+    -- we use include() to provide
+
+    urlpattern = [
+        ....,
+        path('endpoint', include('appName.urls'))
+    ]
+
+6. after doing so just goto the location and then hit the endpoint and you will able to see the response.
+
+----------------------------------------------------------------------------------------------------------------
+
+HTML pages as response. 
+
+1. create a folder with a name templates in our app.
+2. create html files inside the templates folder. 
+3. use render function inside the view.py to send the html page. 
+    syntax ; 
+        def functionName(request):
+            return render(request, 'htmlFilename.html")
+4. register the view function with urls.py and hit the endpoint in the browser.
+
+-------------------------------------------------------------------------------------------------------------------
+
+REST FRAMEWORK : 
+
+-- In python we use rest framework to generate the apis.
+-- we have to install the rest framework 
+    pip install djangorestframework
+-- we have to register in installed apps.
+-- we create a view to accept the request and to send a response.
+    -- we used Response from rest_framework.response along with that we used rest_framework.decorators to use api_view.
+    -- api_view defines when the view must be accessed inside it we pass the array of methods.
+-- we have to register the view in urls.py 
+
+------------------------------------------------------------------------------------------------------------
+
