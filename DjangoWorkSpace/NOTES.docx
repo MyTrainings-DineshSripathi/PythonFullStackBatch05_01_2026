@@ -94,3 +94,34 @@ REST FRAMEWORK :
 
 ------------------------------------------------------------------------------------------------------------
 
+Database connectivity : 
+-- install mysql connector -- search for mysql connector for python/django 
+-- search for database configuration for django and copy and paste it
+-- create a database in your DBMS -- provide the database name, username, password in the database configuration code.
+
+-- we have to create models --> representation of a table. -- ORM 
+-- we have to migrate those models -- run the below commands
+    python manage.py makemigrations
+    python manage.py migrate 
+-- make migrations will set the application ready to create database tables based on the models 
+-- migrate -- it will make the changes permanently. 
+
+------------------------------------------------------------------------------------------------------------
+
+Serializer : 
+-- It is used to convert the json --> Data --> json 
+-- To implement the serializer we have to create a new file serializers.py 
+-- we have to import serializers from rest_framework
+-- we have to import the model that we want to use. 
+-- create a class and extend the serializers.ModelSerializer 
+-- we have to create a class inside the serializer class with the name Meta 
+    syntax : 
+        class Meta:
+            model = serializer_model 
+            fields = "__all__"
+-- we have to import the created serializer class into the views. 
+-- when sending the data convert it into the serializer and pass serializer.data 
+
+------------------------------------------------------------------------------------------------------------
+
+
