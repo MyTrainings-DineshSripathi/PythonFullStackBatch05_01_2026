@@ -124,4 +124,38 @@ Serializer :
 
 ------------------------------------------------------------------------------------------------------------
 
+Request --> URL ---> View --> Serialize --> database --> serialize --> view --> API --> Response
 
+------------------------------------------------------------------------------------------------------------
+
+Instead of creating mutliple views we are going to create a single view which can work with the CRUD options.
+
+-- we imported viewsets from rest_framework and created a class 
+-- extend the ModelViewSet to the created class from the viewsets 
+-- we have to pass 2 values 
+    1. query_set = modelName.Objects.all()
+    2. serializer_class = serializerClassName 
+-- To generate the dynamic url we have to use the router
+-- we have to import the DefaultRouter from rest_framework.routers 
+-- create an object for the DefaultRouter 
+    router = DefaultRouter()
+    router.register('endpoint', ClassName)
+-- we have to include this in our urlspattern
+-- customize the urls
+----------------------------------------------------------------------------------------------------
+
+To implement security we are going to use JWT.
+
+-- Json Web Token
+    -- 3 parts 
+        1. header -- contains the algo and type  
+        2. main -- crenditals, exp, iss
+        3. footer -- sign 
+
+
+------------------------------------------------------------------------
+
+CORS -- Cross Origin Resource Sharing 
+
+-- http://localhost:5173
+-- http://127.0.0.1:8000
