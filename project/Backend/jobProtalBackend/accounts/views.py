@@ -51,4 +51,4 @@ def loginUser(request):
             "role": user.role
         })
         
-    return Response(serializer.errors)
+    return Response(serializer.errors, status=400)
