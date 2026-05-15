@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Your OTP Code</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #4F46E5; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; background-color: #f9f9f9; }
+        .footer { background-color: #333; color: white; padding: 10px; text-align: center; font-size: 12px; }
+        .otp-box {
+            margin: 24px 0;
+            padding: 16px;
+            background-color: #eef2ff;
+            border: 1px solid #c7d2fe;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            color: #312e81;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OTP Verification</h1>
+        </div>
+        <div class="content">
+            <h2>Hello {{ fullname }},</h2>
+            <p>Use the one-time password below to complete your sign-in to Job Portal.</p>
+
+            <div class="otp-box">{{ otp_code }}</div>
+
+            <p>This code will expire in {{ validity_minutes }} minutes.</p>
+            <p>If you did not try to sign in, you can ignore this email and your account will remain secure.</p>
+
+            <p>Best regards,<br>Job Portal Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 Job Portal. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

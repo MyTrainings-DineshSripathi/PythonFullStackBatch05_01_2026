@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Application Status Update</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #4F46E5; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; background-color: #f9f9f9; }
+        .status { font-size: 18px; font-weight: bold; padding: 10px; border-radius: 5px; text-align: center; margin: 20px 0; }
+        .accepted { background-color: #10B981; color: white; }
+        .rejected { background-color: #EF4444; color: white; }
+        .pending { background-color: #F59E0B; color: white; }
+        .reviewed { background-color: #3B82F6; color: white; }
+        .footer { background-color: #333; color: white; padding: 10px; text-align: center; font-size: 12px; }
+        .button { display: inline-block; padding: 10px 20px; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Application Status Update</h1>
+        </div>
+        <div class="content">
+            <h2>Dear Job Seeker,</h2>
+            <p>We have an update regarding your application for the position of <strong>{{ job_title }}</strong> at <strong>{{ company_name }}</strong>.</p>
+
+            <div class="status {% if status == 'accepted' %}accepted{% elif status == 'rejected' %}rejected{% elif status == 'pending' %}pending{% else %}reviewed{% endif %}">
+                Status: {{ status|title }}
+            </div>
+
+            {% if status == 'accepted' %}
+                <p><strong>Congratulations!</strong> Your application has been accepted. The HR team will contact you soon with next steps.</p>
+            {% elif status == 'rejected' %}
+                <p>We regret to inform you that your application was not selected for this position. We encourage you to apply for other suitable opportunities on our platform.</p>
+            {% elif status == 'reviewed' %}
+                <p>Your application is under review. We'll keep you updated on any further developments.</p>
+            {% else %}
+                <p>Your application is still being processed. We'll notify you once there's an update.</p>
+            {% endif %}
+
+            <p>You can always check your application status by logging into your dashboard.</p>
+
+            <p>Best regards,<br>
+            Job Portal Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 Job Portal. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

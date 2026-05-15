@@ -1,0 +1,45 @@
+Python 
+    OOP 
+        1. Class & Object 
+        2. Inheritance 
+        3. Encapsulation 
+        4. Abstraction 
+
+1. class :
+    -- Is a blueprint of an object. 
+    -- It is used to guide the object. --> store the info. 
+2. Object : 
+    -- Instance of a class. 
+    -- We will store the data inside an object. 
+
+-- Plan -- blue print -- construct a house. 
+-- House -- 
+
+syntax : 
+    class ClassName:
+        //code 
+
+    objectName = ClassName()
+
+-- it will call '__init__'
+syntax : 
+    def __init__(self):
+        //code
+
+=============================================================================================================================
+Inheritance : 
+    -- Accessing one class props inside another.
+    -- To achieve code re-useability 
+    -- By extending one class with another we will use Inheritance.
+    syntax : 
+        //parent class 
+        class A:
+            //code 
+        
+        //child class 
+        class B(A):
+            //code 
+    -- To use the code of class A inside class B. 
+    -- class providing data is called as super class or parent class.
+    -- class consuming data is called as sub class or child class. 
+
